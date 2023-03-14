@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,22 +9,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float rotetionSpeed;
     [SerializeField] private float jumpSpeed;
-    //[SerializeField] private Transform goal;
 
     private CharacterController charecterController;
     private float ySpeed;
     private float originalStepOffset;
+    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
         charecterController = GetComponent<CharacterController>();
         originalStepOffset = charecterController.stepOffset;
-        
-            //NavMeshAgent agent = GetComponent<NavMeshAgent>();
-           //agent.destination = goal.position;
     }
-    
+
+    // Update is called once per frame
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
