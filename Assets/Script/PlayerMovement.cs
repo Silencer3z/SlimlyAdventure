@@ -1,22 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private Rigidbody rb;
-    
     [SerializeField] private float speed;
     [SerializeField] private float rotetionSpeed;
     [SerializeField] private float jumpSpeed;
 
     private CharacterController charecterController;
     private float ySpeed;
+
     private float originalStepOffset;
+
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+
         charecterController = GetComponent<CharacterController>();
         originalStepOffset = charecterController.stepOffset;
     }
@@ -55,8 +56,9 @@ public class PlayerMovement : MonoBehaviour
         if (movementDirection != Vector3.zero)
         {
             Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
-            
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotetionSpeed * Time.deltaTime);
+
+            transform.rotation =
+                Quaternion.RotateTowards(transform.rotation, toRotation, rotetionSpeed * Time.deltaTime);
         }
     }
 }

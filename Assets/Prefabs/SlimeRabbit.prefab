@@ -45,11 +45,11 @@ GameObject:
   - component: {fileID: 3611341401846004933}
   - component: {fileID: 3611341401846004932}
   - component: {fileID: 3611341401846004928}
+  - component: {fileID: 968472527674944813}
   - component: {fileID: 3611341401846004934}
-  - component: {fileID: 3611341401846004935}
   m_Layer: 0
   m_Name: SlimeRabbit
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +125,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &968472527674944813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501159151671865160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b17f3054addf4a4885eb6ec39473dee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3611341401846004934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,32 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620d32a5faedf8c4cb6807f617f8b9ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   speed: 3
   rotetionSpeed: 690
   jumpSpeed: 5
---- !u!195 &3611341401846004935
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1501159151671865160}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.31
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.85
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &1862528005033166116
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +164,7 @@ GameObject:
   - component: {fileID: 5955731415205329055}
   m_Layer: 0
   m_Name: Slime_02
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -326,7 +315,7 @@ GameObject:
   - component: {fileID: 2310119064984976345}
   m_Layer: 0
   m_Name: Rig
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
