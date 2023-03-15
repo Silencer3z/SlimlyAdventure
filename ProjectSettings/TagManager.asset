@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Danger
   - JustObj
+  - Key
   layers:
   - Default
   - TransparentFX
