@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
+using TMPro;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -15,21 +17,25 @@ public class GameController : MonoBehaviour
     
     [SerializeField] private float Dead;
     [SerializeField] private float OutMap;
-    [SerializeField] private int Key = 0;
-    [SerializeField] private int Requirement; 
+    [SerializeField] public int Key = 0;
+    [SerializeField] public int Requirement;
+    public int stage = 1;
 
+    public TextMeshProUGUI KeyUI;
+    public TextMeshProUGUI RequirementUI;
+    public TextMeshProUGUI stageUI;
    
 
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        RequirementUI.text = "Key Require " + Requirement.ToString();
+        KeyUI.text = "YourKey : " + Key.ToString()+"/" + Requirement.ToString();
+        stageUI.text ="Stage : "+ stage.ToString();
         if (Input.GetKey(KeyCode.R))
         {
             Application.LoadLevel(Application.loadedLevel);
-        }
-        {
-            
         }
         if (player.transform.position.y < OutMap)
         {
@@ -50,6 +56,7 @@ public class GameController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //CheckPoint & StageCheck
         if (other.gameObject.CompareTag("Key"))
         {
             Destroy(other.gameObject);
@@ -63,20 +70,22 @@ public class GameController : MonoBehaviour
                 vectorPoint =  other.transform.position;
                 Destroy(other.gameObject);
                 Key = 0;
-                Requirement++;
+                stage++;
+                Requirement+=2;
             }
         }
         else
         {
             Debug.Log("sorry");
         }
-
+        //Danger Object If touch = Death & ResetPosition to Current CheckPoint
         if (other.gameObject.CompareTag("Danger"))
         {
             Debug.Log("I'm In");
             Dead = 1;
             
         }
+        
         
     }
 }
