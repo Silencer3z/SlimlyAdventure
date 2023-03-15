@@ -22,14 +22,14 @@ public class FadeObstructionsManager : MonoBehaviour
     /// This script is placed on any object that we keep track of internally, 
     /// so that we can remove it from our lists when it gets destroyed 
     /// </summary>
-    private class NotifyFadeSystem : MonoBehaviour
+    /*private class NotifyFadeSystem : MonoBehaviour
     {
         void OnDestroy()
         {
             FadeObstructionsManager.Instance.RemoveFadingObject(this.gameObject);
             FadeObstructionsManager.Instance.UnRegisterShouldBeVisible(this.gameObject);
         }
-    }
+    }*/
 
     static FadeObstructionsManager instance;
     public static FadeObstructionsManager Instance
@@ -82,7 +82,7 @@ public class FadeObstructionsManager : MonoBehaviour
     public void RegisterShouldBeVisible(GameObject shouldBeVisible)
     {
         ShouldBeVisibleObjects.Add(shouldBeVisible);
-        shouldBeVisible.AddComponent<NotifyFadeSystem>();
+        
     }
 
     public void UnRegisterShouldBeVisible(GameObject shouldBeVisible)
@@ -154,7 +154,6 @@ public class FadeObstructionsManager : MonoBehaviour
 
                 // Add to hidden objects
                 HiddenObjects.Add(hiddenObject);
-                go.AddComponent<NotifyFadeSystem>();
             }
         }
 
@@ -207,7 +206,7 @@ public class FadeObstructionsManager : MonoBehaviour
             }
 
             // Remove the FadedObject monobehaviour
-            Destroy(x.GameObject.GetComponent<NotifyFadeSystem>());
+            
 
             return true;
         });

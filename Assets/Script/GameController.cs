@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
     
     [SerializeField] private float Dead;
     [SerializeField] private float OutMap;
+    [SerializeField] private int Key = 0;
+    [SerializeField] private int Requirement; 
 
    
 
@@ -48,13 +50,27 @@ public class GameController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Respawn"))
+        if (other.gameObject.CompareTag("Key"))
         {
-
-            vectorPoint =  other.transform.position;
-
             Destroy(other.gameObject);
+            Key++;
         }
+        if (Key == Requirement)
+        {
+            Debug.Log("You can pass");
+            if (other.gameObject.CompareTag("Respawn"))
+            {
+                vectorPoint =  other.transform.position;
+                Destroy(other.gameObject);
+                Key = 0;
+                Requirement++;
+            }
+        }
+        else
+        {
+            Debug.Log("sorry");
+        }
+
         if (other.gameObject.CompareTag("Danger"))
         {
             Debug.Log("I'm In");
