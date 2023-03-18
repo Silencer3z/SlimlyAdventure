@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 using TMPro;
+using TreeEditor;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
@@ -52,6 +53,7 @@ public class GameController : MonoBehaviour
             player.transform.position = vectorPoint;
             Dead = 0;
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -76,13 +78,18 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            Debug.Log("sorry");
+            Debug.Log("sorry you aren't met requirement");
         }
         //Danger Object If touch = Death & ResetPosition to Current CheckPoint
         if (other.gameObject.CompareTag("Danger"))
         {
             Debug.Log("I'm In");
             Dead = 1;
+            
+        }
+
+        if (other.gameObject.CompareTag("Finish"))
+        {
             
         }
         
