@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private List<GameObject> respawnPoint;
 
     [SerializeField] private Vector3 vectorPoint;
+    [SerializeField] private GameObject FinishUI;
     
     [SerializeField] private float Dead;
     [SerializeField] private float OutMap;
@@ -54,6 +55,20 @@ public class GameController : MonoBehaviour
             Dead = 0;
         }
         
+        //Stage Check
+
+        if (stage == 4)
+        {
+            Requirement = 1;
+        }
+
+        if (stage == 5)
+        {
+            RequirementUI.text = "Final Stage";
+            KeyUI.text = "Final Stage";
+            stageUI.text = "Final Stage ";
+        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -90,7 +105,10 @@ public class GameController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Finish"))
         {
-            
+            FinishUI.SetActive(true);
+            gameObject.GetComponent<pauseMenu>().pauseMenuUI.SetActive(false);
+            Time.timeScale = 0f;
+
         }
         
         
