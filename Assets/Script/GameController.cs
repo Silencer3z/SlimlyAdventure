@@ -59,10 +59,10 @@ public class GameController : MonoBehaviour
         
         //Stage Check
 
-        if (stage == 4)
+        /*if (stage == 4)
         {
-            Requirement = 1;
-        }
+            Requirement = 7;
+        }*/
 
         if (stage == 5)
         {

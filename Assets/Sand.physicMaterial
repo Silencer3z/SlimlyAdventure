@@ -6,9 +6,9 @@ PhysicMaterial:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ice
-  dynamicFriction: 0.01
-  staticFriction: 0.01
+  m_Name: Sand
+  dynamicFriction: 5
+  staticFriction: 5
   bounciness: 0
   frictionCombine: 2
   bounceCombine: 2
