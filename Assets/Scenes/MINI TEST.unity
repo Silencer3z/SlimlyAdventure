@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.006013803, g: 0.060162302, b: 0.19518852, a: 1}
+  m_IndirectSpecularColor: {r: 0.006013802, g: 0.06016229, b: 0.19518852, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5715,8 +5715,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288742954}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.29, y: 1.937, z: 22.285004}
-  m_LocalScale: {x: 0.4078, y: 0.11468966, z: 0.4078}
+  m_LocalPosition: {x: 0.29078, y: 1.937, z: 22.244}
+  m_LocalScale: {x: 0.34291902, y: 0.096442536, z: 0.34291902}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 133982285}
@@ -19174,7 +19174,7 @@ Transform:
   m_GameObject: {fileID: 955562573}
   m_LocalRotation: {x: -0.052335896, y: 0, z: 0, w: 0.9986295}
   m_LocalPosition: {x: 0.051, y: -2.37, z: 46.02}
-  m_LocalScale: {x: 6.3216553, y: 0.6757, z: 11.205709}
+  m_LocalScale: {x: 6.5125694, y: 0.6757, z: 11.205709}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1746500788}
@@ -38412,7 +38412,7 @@ Transform:
   m_GameObject: {fileID: 1827425660}
   m_LocalRotation: {x: 0.052335896, y: 0, z: 0, w: 0.9986295}
   m_LocalPosition: {x: 0.051, y: -2.35, z: 57.07}
-  m_LocalScale: {x: 6.872904, y: 0.6757, z: 11.205709}
+  m_LocalScale: {x: 6.464791, y: 0.6757, z: 11.205709}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1746500788}
@@ -40408,7 +40408,7 @@ Transform:
   m_GameObject: {fileID: 1924691205}
   m_LocalRotation: {x: -0.052335896, y: 0, z: 0, w: 0.9986295}
   m_LocalPosition: {x: 0.051, y: -2.44, z: 67.36}
-  m_LocalScale: {x: 7.027152, y: 0.6757, z: 11.205709}
+  m_LocalScale: {x: 6.592593, y: 0.6757, z: 11.205709}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1746500788}
@@ -45081,6 +45081,14 @@ PrefabInstance:
       propertyPath: stageUI
       value: 
       objectReference: {fileID: 872134450}
+    - target: {fileID: 4133197797056665701, guid: 82cb70589feec42428c00edbff09e945, type: 3}
+      propertyPath: FinishUI
+      value: 
+      objectReference: {fileID: 1013329964}
+    - target: {fileID: 4133197797056665701, guid: 82cb70589feec42428c00edbff09e945, type: 3}
+      propertyPath: Requirement
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4133197797056665701, guid: 82cb70589feec42428c00edbff09e945, type: 3}
       propertyPath: RequirementUI
       value: 
