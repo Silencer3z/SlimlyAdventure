@@ -12,7 +12,7 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private GameObject player;
-    [SerializeField] private Rigidbody rb;
+    //SerializeField] private Rigidbody rb;
 
     [SerializeField] private List<GameObject> respawnPoint;
 
@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI RequirementUI;
     public TextMeshProUGUI stageUI;
    
-
+    
 
     // Update is called once per frame
     void FixedUpdate()
