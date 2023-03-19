@@ -5,8 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 using TMPro;
-using TreeEditor;
-using UnityEditor.Timeline.Actions;
+using Unity.VisualScripting;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
@@ -23,6 +22,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private float OutMap;
     [SerializeField] public int Key = 0;
     [SerializeField] public int Requirement;
+    public GameObject pauseUI;
     public int stage = 1;
 
     public TextMeshProUGUI KeyUI;
@@ -37,10 +37,7 @@ public class GameController : MonoBehaviour
         RequirementUI.text = "Key Require " + Requirement.ToString();
         KeyUI.text = "YourKey : " + Key.ToString()+"/" + Requirement.ToString();
         stageUI.text ="Stage : "+ stage.ToString();
-        if (Input.GetKey(KeyCode.R))
-        {
-            Application.LoadLevel(Application.loadedLevel);
-        }
+       
         if (player.transform.position.y < OutMap)
         {
             player.transform.position = vectorPoint;
@@ -110,7 +107,6 @@ public class GameController : MonoBehaviour
         if (other.gameObject.CompareTag("Finish"))
         {
             FinishUI.SetActive(true);
-            gameObject.GetComponent<pauseMenu>().pauseMenuUI.SetActive(false);
             Time.timeScale = 0f;
 
         }
