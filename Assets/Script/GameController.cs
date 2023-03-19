@@ -6,11 +6,13 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using TMPro;
 using TreeEditor;
+using UnityEditor.Timeline.Actions;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     [SerializeField] private GameObject player;
+    [SerializeField] private Rigidbody rb;
 
     [SerializeField] private List<GameObject> respawnPoint;
 
@@ -90,11 +92,13 @@ public class GameController : MonoBehaviour
                 stage++;
                 Requirement+=2;
             }
+            else if (Key != Requirement)
+            {
+                Debug.Log("You're not met the requirement");
+            }
         }
-        else
-        {
-            Debug.Log("sorry you aren't met requirement");
-        }
+        
+        
         //Danger Object If touch = Death & ResetPosition to Current CheckPoint
         if (other.gameObject.CompareTag("Danger"))
         {
@@ -110,7 +114,7 @@ public class GameController : MonoBehaviour
             Time.timeScale = 0f;
 
         }
-        
-        
+
+
     }
 }
